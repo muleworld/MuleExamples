@@ -37,8 +37,8 @@ payload.students.*student_marks]]></dw:set-payload>
         </dw:transform-message>
         <foreach collection="#[payload]" doc:name="For Each">
             <set-variable variableName="marks" value="#[payload.marks]" doc:name="Variable"/>
-            <set-variable variableName="pm" value="#['40']" doc:name="Variable"/>
-            <logger message="#[flowVars.marks &gt;= '40']" level="INFO" doc:name="Logger"/>
+            <set-variable variableName="pm" value="#['40']" doc:name="passing marks"/>
+            <logger message="#[flowVars.marks &gt;= '40']" level="INFO" doc:name="Boolean Logging"/>
             <dw:transform-message doc:name="Transform Message">
                 <dw:set-payload><![CDATA[%dw 1.0
 %output application/xml
